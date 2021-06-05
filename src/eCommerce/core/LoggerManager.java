@@ -6,7 +6,7 @@ public class LoggerManager implements LoggerService {
 
 	@Override
 	public void mailLog(User user) {
-		System.out.println("Doðrulama maili gönderildi");
+		System.out.println("Dogrulama maili gönderildi");
 		
 	}
 }

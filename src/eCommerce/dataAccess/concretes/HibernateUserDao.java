@@ -52,7 +52,7 @@ public class HibernateUserDao implements UserDao {
 	@Override
 	public void logIn(User user) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

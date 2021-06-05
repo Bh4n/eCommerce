@@ -28,13 +28,13 @@ public class UserManager implements UserService {
 	@Override
 	public void signUp(User user) {
 
-		System.out.print("Adýnýzý girin: ");
+		System.out.print("Adinizi girin: ");
 		user.setFirstName(scan.next());
-		System.out.print("Soyadýnýzý girin: ");
+		System.out.print("Soyadinizi girin: ");
 		user.setLastName(scan.next());
 		System.out.println("E-Mail adresinizi girin: ");
 		user.seteMail(scan.next());
-		System.out.println("Þifrenizi girin: ");
+		System.out.println("Sifrenizi girin: ");
 		user.setPasswd(scan.next());
 		if (!validationService.checkIfRealPerson(user)) {
 			System.out.println("Kullanici eklenemedi.");
@@ -47,7 +47,7 @@ public class UserManager implements UserService {
 			}
 			dao.add(user);
 			loggerService.mailLog(user);
-			System.out.println("Kullanici baþarýyla kayýt oldu.");
+			System.out.println("Kullanici basariyla kayit oldu.");
 		}
 
 	}
@@ -56,12 +56,12 @@ public class UserManager implements UserService {
 	public void signIn(User user) {
 		if (user.getEMail() != null) {
 			if (validationService.checkIfRealPerson(user)) {
-				System.out.println("Giriþ baþarýlý.\nHoþgeldiniz: " + user.getFirstName()+" "+user.getLastName());
+				System.out.println("Giris basarili.\nHosgeldiniz: " + user.getFirstName()+" "+user.getLastName());
 			}else {
 				System.out.println("Kullanici eklenemedi.");
 			}
 		}
-		System.out.println("E-Mail boþ geçilemez");
+		System.out.println("E-Mail bos geçilemez");
 	}
 
 	@Override
